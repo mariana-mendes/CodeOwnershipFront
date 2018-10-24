@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Metric from '../Metric/Metric';
-import './Projeto.css';
+import './Project.css';
 
-class Projeto extends Component {
+class Project extends Component {
   render() {
     return (
-      <div className="Projeto">
+      <div className="Project">
       <legend> Your project goes here... </legend>
         <h2>
          
@@ -16,4 +16,4 @@ class Projeto extends Component {
   }
 }
 
-export default Projeto;
+export default Project;

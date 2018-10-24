@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Projeto from './Projeto/Projeto';
+import Project from './Project/Project';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
           {/* <User></User> */}
           
         <div>
-       <Projeto></Projeto>
+       <Project></Project>
        </div>
       </div>
      
