@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Data.css';
 
 class Data extends Component {
   render() {
@@ -6,7 +7,6 @@ class Data extends Component {
       <div className="Data">
       <legend> Your Data goes here... </legend>
         <h2>
-         
         </h2>
       
       </div>
