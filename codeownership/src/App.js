@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
 import Project from './Project/Project';
+import axios from 'axios';
 import './App.css';
+
 class App extends Component {
+  constructor(){
+    super();
+  this.state = {showProject: false};
+
+  this.handleClick = this.handleClick.bind(this)
+
+  }
+  handleClick () {
+    this.setState({showProject:true});
+    axios.get('http://localhost:4000/user')
+      .then(response => console.log(response))
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -16,7 +32,7 @@ class App extends Component {
 <div class="sidenav">
   <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar"></img>
   <a href="#about">Profile</a>
-  <a href="#services">Projects</a>
+  <a href="#services"  onClick={this.handleClick} >Projects</a>
   <a href="#services">Log out</a>
 
   
@@ -36,7 +52,7 @@ class App extends Component {
           {/* <User></User> */}
           
         <div>
-       <Project></Project>
+        { this.state.showProject ? <Project/> : null}
        </div>
       </div>
      
