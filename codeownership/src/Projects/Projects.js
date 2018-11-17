@@ -2,27 +2,39 @@ import React, { Component } from 'react';
 import Metric from '../Metric/Metric';
 import Data from '../Data/Data';
 import ProjectItem from '../ProjectItem/ProjectItem';
-import { Jumbotron, Button } from 'reactstrap';
+import { Jumbotron, Button, Table } from 'reactstrap';
 import './Projects.css';
 
 class Projects extends Component {
-
+ 
   render() {
+  
     let projectItems;
     if(this.props.projects){
-      projectItems = this.props.projects.map( project => {
+      projectItems = this.props.projects.map(project => {
+      
         return(
-          <ProjectItem  key={project._id} project={project}/>
+          <ProjectItem  key={project._id} project={project}>
+          </ProjectItem>
+          
         );
       })
     };
     return (
       <div className="Projects">
-       <Jumbotron>
+       <Table dark>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Project Name</th>
+            <th>Data </th>
+            <th>Git</th>
+          </tr>
+        </thead>
+        <tbody>
         {projectItems}
-      </Jumbotron>>
-      <Data></Data>
-      <Metric></Metric>
+        </tbody>
+        </Table>
       </div>
     );
   }
