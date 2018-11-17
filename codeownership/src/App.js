@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import Project from './Project/Project';
+import Projects from './Projects/Projects';
 import axios from 'axios';
 import './App.css';
 
 class App extends Component {
   constructor(){
     super();
-  this.state = {showProject: false};
-
-  this.handleClick = this.handleClick.bind(this)
-
+    this.state = {
+      projects: []
+    };
   }
-  handleClick () {
-    this.setState({showProject:true});
+
+
+  componentWillMount() {
     axios.get('http://localhost:4000/user')
-      .then(response => console.log(response))
+    .then(response => {
+      this.setState({projects: response.data})
+    })
   }
-
-
   render() {
     return (
       <div className="App">
@@ -26,6 +26,7 @@ class App extends Component {
 
 </head>
 <body>
+  {/* Usar reacstrap pra ajeitar isso aqui xD */}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -34,25 +35,12 @@ class App extends Component {
   <a href="#about">Profile</a>
   <a href="#services"  onClick={this.handleClick} >Projects</a>
   <a href="#services">Log out</a>
-
-  
 </div>
      
 </body>
-
-
- <div class="header">
-  <h2>Blog Name</h2>
-</div>
-
-
-
       </div>
-
-          {/* <User></User> */}
-          
         <div>
-        { this.state.showProject ? <Project/> : null}
+          <Projects projects={this.state.projects}/>
        </div>
       </div>
      
