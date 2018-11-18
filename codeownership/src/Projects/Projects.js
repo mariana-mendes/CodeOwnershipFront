@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Metric from '../Metric/Metric';
 import Data from '../Data/Data';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import ProjectItem from '../ProjectItem/ProjectItem';
 import { Jumbotron, Button, Table } from 'reactstrap';
 import './Projects.css';
@@ -16,7 +17,6 @@ class Projects extends Component {
         return(
           <ProjectItem  key={project._id} project={project}>
           </ProjectItem>
-          
         );
       })
     };
