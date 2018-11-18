@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import Route  from 'react-router-dom/Route';
 import { Jumbotron, Button } from 'reactstrap';
 
 class ProjectItem extends Component {
@@ -15,15 +17,13 @@ class ProjectItem extends Component {
   }
   
   render() {
-    let showProject = this.state.showProject;
     return (
-      <tr onClick={this.handleClick.bind(this, this.props.project)} className="ProjectItem">
-           <th scope="row">1</th>
-            <td>{this.props.project.name}</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-      </tr>
-
+        <tr onClick={this.handleClick.bind(this, this.props.project)} className="ProjectItem">
+            <th scope="row">1</th>
+              <td>{this.props.project.name}</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+        </tr>
     );
   }
 }
