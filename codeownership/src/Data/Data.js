@@ -19,11 +19,6 @@ class Data extends Component {
   }
 
   render() {
-    const data = {
-          lines_code: 312312,
-          name: "Projeto de LP2",
-          authors: ["Mariana","Jose", "Jurema"]
-    }
 
     return (
       <div className="Data">

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Metric from '../Metric/Metric';
-import Data from '../Data/Data';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+// import Metric from '../Metric/Metric';
+// import Data from '../Data/Data';
+// import { BrowserRouter as Router, Link } from 'react-router-dom';
 import ProjectItem from '../ProjectItem/ProjectItem';
-import { Jumbotron, Button, Table } from 'reactstrap';
+import { Table } from 'reactstrap';
 import './Projects.css';
 
 class Projects extends Component {
@@ -25,10 +25,7 @@ class Projects extends Component {
        <Table dark>
         <thead>
           <tr>
-            <th>#</th>
             <th>Project Name</th>
-            <th>Data </th>
-            <th>Git</th>
           </tr>
         </thead>
         <tbody>

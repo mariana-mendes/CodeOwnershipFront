@@ -19,6 +19,7 @@ class App extends Component {
       this.setState({projects: response.data})
     })
   }
+
   render() {
     return (
       <Router>

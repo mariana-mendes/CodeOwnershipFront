@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import Project from '../Project/Project';
+import Route from 'react-router-dom/Route';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route  from 'react-router-dom/Route';
-import { Jumbotron, Button } from 'reactstrap';
 
 class ProjectItem extends Component {
 
@@ -12,19 +12,34 @@ class ProjectItem extends Component {
   }
   
   handleClick(t, project){
-      console.log(this.props)
       console.log(project._id);
+      this.setState({showProject:true});
+      console.log(this.state.showProject);
   }
   
   render() {
     return (
-        <tr onClick={this.handleClick.bind(this, this.props.project)} className="ProjectItem">
-            <th scope="row">1</th>
-              <td>{this.props.project.name}</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-        </tr>
+        <Router>
+            <div>
+            <Link to="/project/id">
+            <tr onClick={this.handleClick.bind(this, this.props.project)} className="ProjectItem">
+                <th scope="row">1</th>
+                <td>{this.props.project.name}</td>
+            
+            </tr>
+            </Link>
+            <Route path="/project/:_id" render={Project} ></Route>
+            
+            </div>
+        </Router>
     );
+
+    function Project({ match }) {
+        console.log(match.params._id);
+        return(
+             <h1>Hello {match.params.name}!</h1>
+        );
+     }
   }
 }
 
