@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route  from 'react-router-dom/Route';
-import { Jumbotron, Button } from 'reactstrap';
+import Project from '../Project/Project';
+import Route from 'react-router-dom/Route';
+import { BrowserRouter as Router, Link, Switch } from 'react-router-dom';
 
 class ProjectItem extends Component {
 
@@ -12,18 +12,20 @@ class ProjectItem extends Component {
   }
   
   handleClick(t, project){
-      console.log(this.props)
-      console.log(project._id);
+      this.setState({showProject:true});
   }
   
   render() {
     return (
-        <tr onClick={this.handleClick.bind(this, this.props.project)} className="ProjectItem">
-            <th scope="row">1</th>
-              <td>{this.props.project.name}</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-        </tr>
+            
+            <tr onClick={this.handleClick.bind(this, this.props.project)} className="ProjectItem">
+                <th scope="row">1</th>
+                <Link to={{pathname:`/project/${this.props.project._id}`}}>{this.props.project.name}</Link>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+        
+       
     );
   }
 }
