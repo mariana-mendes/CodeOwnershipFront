@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Router, Link } from 'react-router-dom';
-// import Route  from 'react-router-dom/Route';
-// import { Jumbotron, Button } from 'reactstrap';
+import Metric from '../Metric/Metric';
+import Data from '../Data/Data';
 
 class Project extends Component {
-  constructor(){
-      super();
+  state = {
+      id: null
   }
-  
-  handleClick(t, project){
-      if(this.pro)
-      console.log(project._id);
+
+  componentDidMount() {
+      const { handle } = this.props.match.params
+      fetch(`http://localhost:3000/project/${handle}`).then((id) => {
+          this.setState(() => ({id}))
+      })
   }
   
   render() {
     return (
-       <h1>ASASDASDSDASDA </h1>
+      <div className="Project">
+            <Data></Data>
+            <Metric></Metric>
+      </div>
+         
+      
     );
   }
 }

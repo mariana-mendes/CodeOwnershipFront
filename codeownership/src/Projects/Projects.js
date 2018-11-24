@@ -7,34 +7,36 @@ import { Table } from 'reactstrap';
 import './Projects.css';
 
 class Projects extends Component {
- 
+
   render() {
-  
     let projectItems;
     if(this.props.projects){
       projectItems = this.props.projects.map(project => {
-      
         return(
-          <ProjectItem  key={project._id} project={project}>
-          </ProjectItem>
+              <ProjectItem  key={project._id} project={project}>
+              </ProjectItem>
         );
       })
     };
-    return (
-      <div className="Projects">
-       <Table dark>
-        <thead>
-          <tr>
-            <th>Project Name</th>
-          </tr>
-        </thead>
-        <tbody>
-        {projectItems}
-        </tbody>
-        </Table>
-      </div>
+    
+    return ( 
+          <div className="Projects">
+            <Table dark>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Project Name</th>
+                        <th>Data </th>
+                        <th>Git</th>
+                      </tr>
+                    </thead>
+                    {projectItems}
+            </Table>
+           </div>
     );
   }
 }
+
+
 
 export default Projects;

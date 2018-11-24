@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Projects from './Projects/Projects';
+import Project from './Project/Project';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Route  from 'react-router-dom/Route';
 import axios from 'axios';
@@ -10,7 +11,7 @@ class App extends Component {
     super();
     this.state = {
       projects: []
-    };
+        };
   }
 
   componentWillMount() {
@@ -23,20 +24,17 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <body>
-            {/* Usar reacstrap pra ajeitar isso aqui xD */}
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-            <div class="sidenav">
-              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar"></img>
-              <a href="#about">Profile</a>
+          <div className="App">
+            <div className="sidenav">
+              <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" className="avatar"></img>
+              <a>Profile</a>
               <Link to="/projects" onClick={this.handleClick} >Projects</Link>
-              <a href="#services">Log out</a>
+              <a>Log out</a>
             </div>
-          </body>
-          <Route path="/projects" render={()=> (<Projects projects={this.state.projects}/>)}/>      </div>
+            <Route path="/project/:_id" component={Project}/>,
+            <Route path="/projects" exact strict render={()=> 
+                      (<Projects projects={this.state.projects}/>)}/>      
+          </div>
       </Router>
     );
   }
