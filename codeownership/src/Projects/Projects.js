@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 // import Metric from '../Metric/Metric';
 // import Data from '../Data/Data';
 // import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Grid, Row, Col } from 'react-bootstrap';
 import ProjectItem from '../ProjectItem/ProjectItem';
-import { Table } from 'reactstrap';
+import { Table } from  'react-bootstrap';
 import './Projects.css';
 
 class Projects extends Component {
@@ -21,17 +22,22 @@ class Projects extends Component {
     
     return ( 
           <div className="Projects">
-            <Table dark>
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>Project Name</th>
-                        <th>Data </th>
-                        <th>Git</th>
-                      </tr>
-                    </thead>
-                    {projectItems}
-            </Table>
+            {/* <Grid> */}
+              {/* <Row className="show-grid"> */}
+              {/* <Col xs="auto" > */}
+                <Table  dark className="projects-table">
+                        <thead>
+                          <tr>
+                            <th>Project Name</th>
+                            <th>Data </th>
+                            <th>Git</th>
+                          </tr>
+                        </thead>
+                        {projectItems}
+                </Table>
+                {/* </Col> */}
+            {/* </Row> */}
+            {/* </Grid> */}
            </div>
     );
   }

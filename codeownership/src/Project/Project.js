@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import Metric from '../Metric/Metric';
 import Data from '../Data/Data';
+import Ownership from '../Ownership/Ownership';
+
+import './Project.css';
+import { Jumbotron, Button } from 'react-bootstrap';
+
 
 class Project extends Component {
   state = {
@@ -16,9 +21,10 @@ class Project extends Component {
   
   render() {
     return (
-      <div className="Project">
-            <Data></Data>
-            <Metric></Metric>
+      <div className="project">
+        <Data></Data>
+        <Metric></Metric>
+        <Ownership></Ownership>
       </div>
          
       

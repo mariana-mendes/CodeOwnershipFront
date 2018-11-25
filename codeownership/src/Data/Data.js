@@ -22,24 +22,11 @@ class Data extends Component {
 
     return (
       <div className="Data">
-
-        <Jumbotron>
-          <h1 className="display-3">Hello, world!</h1>
-          <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-          <hr className="my-2" />
-          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-          <p className="lead">
-            <Button color="primary">Learn More</Button>
-          </p>
-      </Jumbotron>
-      {/* <legend> Your Data goes here... </legend>
-        <h2>
-          <p>{data.lines_code}</p>
-          <p>{data.name}</p>
-          <p>{data.authors}</p>
-        </h2>
-        <button className='button' onClick={this.handleClick}>Click Me</button> */}
-      
+          <legend>Some infos about this project... </legend>
+        <Jumbotron  >
+          <li> 13123,32 lines of code</li>
+          <li> 123 classes </li>
+        </Jumbotron>      
       </div>
     );
   }

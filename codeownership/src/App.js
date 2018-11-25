@@ -3,6 +3,7 @@ import Projects from './Projects/Projects';
 import Project from './Project/Project';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Route  from 'react-router-dom/Route';
+import { Grid, Row, Col } from 'react-bootstrap';
 import axios from 'axios';
 import './App.css';
 
@@ -24,7 +25,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-          <div className="App">
+          <div>
             <div className="sidenav">
               <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" className="avatar"></img>
               <a>Profile</a>
@@ -33,8 +34,9 @@ class App extends Component {
             </div>
             <Route path="/project/:_id" component={Project}/>,
             <Route path="/projects" exact strict render={()=> 
-                      (<Projects projects={this.state.projects}/>)}/>      
+                         (<Projects projects={this.state.projects}/>)}/>  
           </div>
+              
       </Router>
     );
   }
