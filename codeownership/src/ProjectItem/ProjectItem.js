@@ -19,8 +19,7 @@ class ProjectItem extends Component {
     return (
             
             <tr onClick={this.handleClick.bind(this, this.props.project)} className="ProjectItem">
-                <th scope="row">1</th>
-                <Link to={{pathname:`/project/${this.props.project._id}`}}>{this.props.project.name}</Link>
+                <th><Link to={{pathname:`/project/${this.props.project._id}`}}>{this.props.project.name}</Link></th>
                 <td>Otto</td>
                 <td>@mdo</td>
             </tr>
