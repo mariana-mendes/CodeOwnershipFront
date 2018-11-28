@@ -22,9 +22,6 @@ class Projects extends Component {
     
     return ( 
           <div className="Projects">
-            {/* <Grid> */}
-              {/* <Row className="show-grid"> */}
-              {/* <Col xs="auto" > */}
                 <Table  dark className="projects-table">
                         <thead>
                           <tr>
@@ -35,9 +32,6 @@ class Projects extends Component {
                         </thead>
                         {projectItems}
                 </Table>
-                {/* </Col> */}
-            {/* </Row> */}
-            {/* </Grid> */}
            </div>
     );
   }
