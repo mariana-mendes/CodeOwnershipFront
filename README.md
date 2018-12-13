@@ -4,6 +4,6 @@ O objetivo da aplicacao é analisar projetos e determinar ownership e expertise 
 
 O que o usuário pode obter ao submter a url do seu projeto GIT?
 
-Relacao de autoria entre classes e contribuidores
-Informacoes gerais sobre o projeto (Numero de linhas, classes, contribuidores, padroes explorados)
-Relacao entre expertise, classe e autores etc.
+* Relacao de autoria entre classes e contribuidores
+* Informacoes gerais sobre o projeto (Numero de linhas, classes, contribuidores, padroes explorados)
+* Relacao entre expertise, classe e autores etc.
