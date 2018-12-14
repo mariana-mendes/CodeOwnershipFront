@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Projects from './Projects/Projects';
 import Project from './Project/Project';
+import Login from './Login/Login';
+
 import Navigation from './Navigation/Navigation';
 import * as ROUTES from './constants/constants';
 import NewUser from './NewUser/NewUser';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
-import { Jumbotron, Button, Badge } from 'react-bootstrap';
 import axios from 'axios';
 import './App.css';
 
@@ -36,7 +37,7 @@ class App extends Component {
           <Navigation/>
           <hr/>
           {/* <Route exact path={ROUTES.LANDING} component={LandingPage} /> */}
-          {/* <Route path={ROUTES.SIGN_UP} component={SignUpPage} /> */}
+          <Route path={ROUTES.SIGN_UP} component={Login} />
           <Route path={ROUTES.SIGN_IN} component={NewUser} />
           {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> */}
           {/* <Route path={ROUTES.HOME} component={HomePage} /> */}
