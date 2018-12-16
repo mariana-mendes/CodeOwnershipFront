@@ -1,6 +1,6 @@
-import FirebaseContext from './Ccontext';
-import Firebase from './Firebase';
+import FirebaseContext from './Context';
+import fire from './Firebase';
 
-export default Firebase;
+export default fire;
 
 export { FirebaseContext };

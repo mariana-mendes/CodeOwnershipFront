@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import Projects from './Projects/Projects';
-import Project from './Project/Project';
 import Login from './Login/Login';
-
-import Navigation from './Navigation/Navigation';
-import * as ROUTES from './constants/constants';
-import NewUser from './NewUser/NewUser';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
+import HomePage from './HomePage/HomePage';
 import axios from 'axios';
 import './App.css';
+import fire from './Firebase/Firebase';
 
 class App extends Component {
+
   constructor() {
     super();
     this.state = {
       projects: [],
-      loggedIn: false
+      user: undefined
     };
+    this.authListener = this.authListener.bind(this);
+  }
+  authListener = () => {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+        localStorage.setItem('user', user.uid);
+      } else {
+        this.setState({ user: null });
+        localStorage.removeItem('user');
+      }
+    })
+  }
 
-    this.toggle = this.toggle.bind(this);
+
+  componentDidMount() {
+    this.authListener();
   }
 
   componentWillMount() {
@@ -31,30 +41,10 @@ class App extends Component {
 
   render() {
     return (
-
-      <Router>
-        <div>
-          <Navigation/>
-          <hr/>
-          {/* <Route exact path={ROUTES.LANDING} component={LandingPage} /> */}
-          <Route path={ROUTES.SIGN_UP} component={Login} />
-          <Route path={ROUTES.SIGN_IN} component={NewUser} />
-          {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> */}
-          {/* <Route path={ROUTES.HOME} component={HomePage} /> */}
-          {/* <Route path={ROUTES.ACCOUNT} component={AccountPage} /> */}
-          {/* <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
-        </div>
-      </Router>
-
-
+      <div className="App">
+        {this.state.user ? (<HomePage />) : (<Login />)}
+      </div>
     );
-  }
-
-
-  toggle() {
-    this.setState({
-      loggedIn: !this.state.loggedIn
-    })
   }
 
 }
