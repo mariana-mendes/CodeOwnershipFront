@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Data.css';
-import { Jumbotron, Button } from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
 import axios from 'axios';
 
 

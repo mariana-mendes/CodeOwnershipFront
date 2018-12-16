@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Project from '../Project/Project';
-import Route from 'react-router-dom/Route';
-import { BrowserRouter as Router, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Link } from 'react-router-dom';
 
 class ProjectItem extends Component {
 

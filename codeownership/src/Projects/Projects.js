@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import Metric from '../Metric/Metric';
 // import Data from '../Data/Data';
 // import { BrowserRouter as Router, Link } from 'react-router-dom';
-import { Grid, Row, Col } from 'react-bootstrap';
 import ProjectItem from '../ProjectItem/ProjectItem';
 import { Table } from  'react-bootstrap';
 import './Projects.css';
