@@ -12,7 +12,7 @@ class Project extends Component {
 
   componentDidMount() {
       const { handle } = this.props.match.params
-      fetch(`http://localhost:3000/project/${handle}`).then((id) => {
+      fetch(`http://localhost:3300/project/${handle}`).then((id) => {
           this.setState(() => ({id}))
       })
   }
