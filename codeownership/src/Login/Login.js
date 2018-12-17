@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Col, Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import { Container, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import fire from '../Firebase/Firebase';
 import firebase from 'firebase'
 
@@ -43,12 +43,11 @@ class Login extends Component {
   render() {
     return (
       <Container className="App">
-        <h2>Login</h2>
         <Form className="form">
           <Col>
             <FormGroup>
               <Label>Email</Label>
-              <Input  onChange={this.handleChangeEmail}
+              <Input onChange={this.handleChangeEmail}
                 type="email"
                 name="email"
                 id="exampleEmail"
@@ -59,7 +58,7 @@ class Login extends Component {
           <Col>
             <FormGroup>
               <Label for="examplePassword">Password</Label>
-              <Input  onChange={this.handleChangePassword} 
+              <Input onChange={this.handleChangePassword}
                 type="password"
                 name="password"
                 id="examplePassword"
@@ -67,8 +66,8 @@ class Login extends Component {
               />
             </FormGroup>
           </Col>
-          <Button  onClick={this.login} >Login</Button>
-          <Button  onClick={this.singup} >Singup</Button>
+          <Button onClick={this.login}> Login</Button>
+          <Button onClick={this.singup} > Singup</Button>
         </Form>
       </Container>
     );

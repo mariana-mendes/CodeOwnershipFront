@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-// import Metric from '../Metric/Metric';
-// import Data from '../Data/Data';
-// import { BrowserRouter as Router, Link } from 'react-router-dom';
 import ProjectItem from '../ProjectItem/ProjectItem';
 import { Table } from  'react-bootstrap';
 import './Projects.css';
@@ -21,7 +18,7 @@ class Projects extends Component {
     
     return ( 
           <div className="Projects">
-                <Table  dark className="projects-table">
+                <Table  dark="true" className="projects-table">
                         <thead>
                           <tr>
                             <th>Project Name</th>
@@ -29,7 +26,9 @@ class Projects extends Component {
                             <th>Git</th>
                           </tr>
                         </thead>
+                        <tbody>
                         {projectItems}
+                        </tbody>
                 </Table>
            </div>
     );

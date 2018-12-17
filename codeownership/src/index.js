@@ -7,7 +7,6 @@ import * as serviceWorker from './serviceWorker';
 // import  FirebaseContext from './Firebase/Context';
 // import  Firebase  from './Firebase/Firebase';
 
-
 ReactDOM.render( <App/>, document.getElementById('root')
 );
 

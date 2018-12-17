@@ -24,8 +24,6 @@ class Project extends Component {
         <Metric></Metric>
         <Ownership></Ownership>
       </div>
-         
-      
     );
   }
 }
