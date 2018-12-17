@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import fire from '../Firebase/Firebase';
 import firebase from 'firebase'
+import axios from 'axios';
 
 class Login extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class Login extends Component {
   singup(e) {
     e.preventDefault();
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
+      axios.post('http://localhost:4000/user', this.state)
     }).catch((error) => {
     })
   }
