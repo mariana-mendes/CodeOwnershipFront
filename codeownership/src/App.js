@@ -1,59 +1,41 @@
 import React, { Component } from 'react';
-import Projects from './Projects/Projects';
-import Project from './Project/Project';
-import Navigation from './Navigation/Navigation';
-import * as ROUTES from './constants/constants';
-import NewUser from './NewUser/NewUser';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
-import { Jumbotron, Button, Badge } from 'react-bootstrap';
-import axios from 'axios';
+import Login from './Login/Login';
+import HomePage from './HomePage/HomePage';
 import './App.css';
+import fire from './Firebase/Firebase';
 
 class App extends Component {
+
   constructor() {
     super();
     this.state = {
-      projects: [],
-      loggedIn: false
-    };
-
-    this.toggle = this.toggle.bind(this);
+      user: undefined
+    }
+    this.authListener = this.authListener.bind(this);
   }
 
-  componentWillMount() {
-    axios.get('http://localhost:4000/user')
-      .then(response => {
-        this.setState({ projects: response.data })
-      })
+  authListener = () => {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+        localStorage.setItem('user', user.uid);
+      } else {
+        this.setState({ user: null });
+        localStorage.removeItem('user');
+      }
+    })
+  }
+
+  componentDidMount() {
+    this.authListener();
   }
 
   render() {
     return (
-
-      <Router>
-        <div>
-          <Navigation/>
-          <hr/>
-          {/* <Route exact path={ROUTES.LANDING} component={LandingPage} /> */}
-          {/* <Route path={ROUTES.SIGN_UP} component={SignUpPage} /> */}
-          <Route path={ROUTES.SIGN_IN} component={NewUser} />
-          {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> */}
-          {/* <Route path={ROUTES.HOME} component={HomePage} /> */}
-          {/* <Route path={ROUTES.ACCOUNT} component={AccountPage} /> */}
-          {/* <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
-        </div>
-      </Router>
-
-
+      <div className="App">
+        {this.state.user ? (<HomePage/>) : (<Login />)}
+      </div>
     );
-  }
-
-
-  toggle() {
-    this.setState({
-      loggedIn: !this.state.loggedIn
-    })
   }
 
 }
