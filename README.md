@@ -7,3 +7,9 @@ O que o usuário pode obter ao submter a url do seu projeto GIT?
 * Relacao de autoria entre classes e contribuidores
 * Informacoes gerais sobre o projeto (Numero de linhas, classes, contribuidores, padroes explorados)
 * Relacao entre expertise, classe e autores etc.
+
+Frontend:
+`cd codeownership && npm install && npm start`
+
+[CodeOwnershipAPI](https://github.com/mariana-mendes/CodeOwnershipAPI).  
+`cd config && node server.js`
