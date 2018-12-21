@@ -9,6 +9,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.0.5",
+    "react-search-input": "^0.11.3",
     "reactstrap": "^6.5.0",
     "sinon": "^7.2.2"
   },

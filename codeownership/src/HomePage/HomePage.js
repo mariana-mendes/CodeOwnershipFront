@@ -20,7 +20,7 @@ class HomePage extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/project')
+        axios.get('http://localhost:3030/project')
             .then(response => {
                 console.log(response);
                 this.setState({ projects: response.data })

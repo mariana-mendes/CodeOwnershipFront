@@ -9,10 +9,16 @@
   background-color: #111 !important;
   position: relative;
   background: black;
-  color: rgb(79, 77, 82);
+  color: white;
   width: 100%;
+
 }
-  
+.search-input {
+  margin-left: 5px;
+  text-align: left;
+  width: 90%
+}
+
 body {
     font-family: "Lato", sans-serif;
 }
